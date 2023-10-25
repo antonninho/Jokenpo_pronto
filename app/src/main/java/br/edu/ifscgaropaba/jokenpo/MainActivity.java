@@ -37,7 +37,33 @@ public class MainActivity extends AppCompatActivity {
 
     public void verificar(int jogadaUser, int jogadaPc){
         TextView resultado = findViewById(R.id.textResultado);
-        resultado.setText("Vocẽ ganhou");
+        TextView jogador = findViewById(R.id.jogador);
+        TextView pc = findViewById(R.id.pc);
+        int pu = Integer.parseInt(jogador.getText().toString());
+        int puc = Integer.parseInt(pc.getText().toString());
+
+        if(jogadaUser == 1 && jogadaPc == 2){
+            puc++;
+            resultado.setText(("Você perdeu"));
+        }
+        else if(jogadaUser == 2 && jogadaPc == 3){
+            puc++;
+            resultado.setText(("Você perdeu"));
+        }
+        else if(jogadaUser == 3 && jogadaPc == 1){
+            puc++;
+            resultado.setText(("Você perdeu"));
+        }
+        else if(jogadaUser == jogadaPc){
+            resultado.setText(("Empate"));
+            pu++;
+            puc++;
+        } else {
+            resultado.setText("Você ganhou");
+            pu++;
+        }
+        jogador.setText(pu+"");
+        pc.setText(puc+"");
     }
 
 
